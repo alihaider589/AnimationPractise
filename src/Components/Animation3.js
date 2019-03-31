@@ -1,30 +1,35 @@
 import React, { Component } from 'react'
 import { Text, View,TouchableWithoutFeedback,Animated ,StyleSheet} from 'react-native'
 
-export default class Animation1 extends Component {
+export default class Animation3 extends Component {
     state={
-        animation: new Animated.Value(1)
+        animation: new Animated.Value(150)
     }
     
-    startAnimation=()=>{
+startAnimation=()=>{
+    Animated.timing(this.state.animation,{
+        toValue:300,
+        duration:350
+    }).start(()=>{
+
         Animated.timing(this.state.animation,{
-            toValue:0,
+            toValue:150,
             duration:350
-        }).start(()=>{
-          Animated.timing(this.state.animation,{
-            toValue:1,
-            duration:350
-          }).start();
-        });
-    }
+        }).start()
+    })
+}
+
   render() {
       const animatedStyle={
-        opacity:this.state.animation
+        width:this.state.animation,
+        height:this.state.animation
       }
     return (
       <View style={styles.Container}>
       <TouchableWithoutFeedback onPress={this.startAnimation} >
-      <Animated.View  style={[styles.box,animatedStyle]}/>
+      <Animated.View  style={[styles.box,animatedStyle]}>
+      <Text style={{fontSize:100}}>Hello World </Text>
+      </Animated.View>
       </TouchableWithoutFeedback>
       </View>
     )

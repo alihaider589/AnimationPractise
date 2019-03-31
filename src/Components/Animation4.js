@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 import { Text, View,TouchableWithoutFeedback,Animated ,StyleSheet} from 'react-native'
 
-export default class Animation1 extends Component {
+export default class Animation4 extends Component {
     state={
-        animation: new Animated.Value(1)
+        animation: new Animated.Value(0)
     }
-    
     startAnimation=()=>{
         Animated.timing(this.state.animation,{
-            toValue:0,
+            toValue:300,
             duration:350
-        }).start(()=>{
-          Animated.timing(this.state.animation,{
-            toValue:1,
-            duration:350
-          }).start();
-        });
+        }).start()
     }
+    
   render() {
       const animatedStyle={
-        opacity:this.state.animation
-      }
+top: this.state.animation,
+right:this.state.animation,
+
+
+    }
     return (
       <View style={styles.Container}>
       <TouchableWithoutFeedback onPress={this.startAnimation} >
