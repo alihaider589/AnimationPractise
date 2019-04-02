@@ -11,11 +11,13 @@ import Animation2 from './src/Components/Animation2'
 import Animation3 from './src/Components/Animation3'
 import Animation4 from './src/Components/Animation4'
 import Animation5 from './src/Components/Animation5'
+import Animation6 from './src/Components/Animation6'
+import Animation7 from './src/Components/Animation7'
 
 export default class App extends Component {
   render() {
     return (
-      <Animation5 />
+      <Animation7 />
       );
   }
 }
